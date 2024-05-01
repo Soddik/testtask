@@ -36,17 +36,18 @@ public class WordCountServiceImpl implements WordCountService {
         fileService.changeMinWordLength(wordMinLength);
         log.info("Word minimum length: {}", wordMinLength);
 
-        log.info("File processing start...");
+        log.info("Files processing start...");
         var wordCollection = fileService.processFiles(path);
-        log.info("File processing complete.");
+        log.info("Files processing complete.");
 
         var topN = request.topN();
         if (topN != DEFAULT_TOP_NUM) {
             filterService.changeTopWordsNum(topN);
             log.info("Top words number changed on: {}", topN);
         }
+
         var filtered = filterService.filter(wordCollection);
-        log.info("Filtered words: {}", filtered);
+        log.info("Words filtered.");
 
         return filtered;
     }
