@@ -20,7 +20,7 @@ import static ru.slevyns.testtask.util.DirValidationMeta.TOP_N_PARAM;
 
 
 class DirValidationServiceTest {
-    ValidationService<DirRequest> validationService = new DirValidationService();
+    private final ValidationService<DirRequest> validationService = new DirValidationService();
 
     @Test
     void validateRequest_AllRequestParamsInvalid_ReturnAllErrors() {

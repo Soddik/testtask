@@ -9,7 +9,7 @@ import java.util.concurrent.TimeoutException;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CustomExecutorServiceTest {
-    CustomExecutorService executorService = new CustomExecutorService();
+    private final CustomExecutorService executorService = new CustomExecutorService();
 
     @Test
     void submitTask_startService_awaitCompletion() throws InterruptedException, TimeoutException, ExecutionException {
@@ -74,7 +74,7 @@ class CustomExecutorServiceTest {
     }
 
     @Test
-    void submitTaskWithException_startService_exceptionThrown() throws InterruptedException, TimeoutException {
+    void submitTaskWithException_startService_exceptionThrown() {
         Callable<Boolean> booleanCallable = () -> {
             Thread.sleep(2000);
             throw new RuntimeException("fail");

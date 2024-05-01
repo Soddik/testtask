@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 import ru.slevyns.testtask.domain.Word;
 import ru.slevyns.testtask.service.filter.FilterService;
 
-import java.util.HashSet;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;

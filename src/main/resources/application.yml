@@ -1,1 +1,3 @@
-spring.application.name=testtask
+spring:
+  application:
+    name: testtask
