@@ -8,10 +8,10 @@ public interface FilterService {
     int DEFAULT_TOP_NUM = 10;
 
     /**
-     * Filters all words by topN
+     * Filters all words
      *
      * @param words all words from files that match regEx
-     * @return a Set of topN words
+     * @return a Set of filtered words
      */
     Set<Word> filter(Set<Word> words);
 
