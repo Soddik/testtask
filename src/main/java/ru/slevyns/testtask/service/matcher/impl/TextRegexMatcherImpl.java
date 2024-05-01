@@ -41,8 +41,10 @@ public class TextRegexMatcherImpl implements TextRegexMatcherService {
     }
 
     public void setMinLength(int newMinLength) {
-        this.minLength = newMinLength;
-        recompilePattern(newMinLength);
+        if (minLength != newMinLength) {
+            this.minLength = newMinLength;
+            recompilePattern(newMinLength);
+        }
     }
 
     private void recompilePattern(int newMaxLength) {
