@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import ru.slevyns.testtask.domain.DirRequest;
-import ru.slevyns.testtask.service.counter.WordCountService;
+import ru.slevyns.testtask.service.word_counter.WordCountService;
 import ru.slevyns.testtask.service.validation.ValidationService;
 
 @Controller

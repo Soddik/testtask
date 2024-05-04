@@ -1,4 +1,4 @@
-package ru.slevyns.testtask.service.filter;
+package ru.slevyns.testtask.service.word_counter.filter;
 
 import ru.slevyns.testtask.domain.Word;
 

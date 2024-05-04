@@ -1,3 +1,8 @@
 spring:
   application:
     name: testtask
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://postgres:5432/test_db?serverTimezone=UTC
+    username: postgres
+    password: root

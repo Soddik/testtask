@@ -2,7 +2,8 @@ package ru.slevyns.testtask.service.matcher;
 
 import org.junit.jupiter.api.Test;
 import ru.slevyns.testtask.domain.Word;
-import ru.slevyns.testtask.service.matcher.impl.TextRegexMatcherImpl;
+import ru.slevyns.testtask.service.word_counter.matcher.TextRegexMatcherService;
+import ru.slevyns.testtask.service.word_counter.matcher.impl.TextRegexMatcherImpl;
 
 import java.util.Objects;
 import java.util.Set;

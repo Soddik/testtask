@@ -1,10 +1,11 @@
 package ru.slevyns.testtask.service.file.impl;
 
 import org.junit.jupiter.api.Test;
+import ru.slevyns.testtask.service.word_counter.file.impl.TxtFileService;
 import ru.slevyns.testtask.service.executor.CustomExecutorService;
-import ru.slevyns.testtask.service.file.FileService;
-import ru.slevyns.testtask.service.matcher.TextRegexMatcherService;
-import ru.slevyns.testtask.service.matcher.impl.TextRegexMatcherImpl;
+import ru.slevyns.testtask.service.word_counter.file.FileService;
+import ru.slevyns.testtask.service.word_counter.matcher.TextRegexMatcherService;
+import ru.slevyns.testtask.service.word_counter.matcher.impl.TextRegexMatcherImpl;
 
 import java.io.File;
 

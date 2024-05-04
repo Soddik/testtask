@@ -2,7 +2,8 @@ package ru.slevyns.testtask.service.filter.impl;
 
 import org.junit.jupiter.api.Test;
 import ru.slevyns.testtask.domain.Word;
-import ru.slevyns.testtask.service.filter.FilterService;
+import ru.slevyns.testtask.service.word_counter.filter.FilterService;
+import ru.slevyns.testtask.service.word_counter.filter.impl.BiggerWordsFilterService;
 
 import java.util.Set;
 

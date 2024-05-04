@@ -1,4 +1,4 @@
-package ru.slevyns.testtask.service.matcher;
+package ru.slevyns.testtask.service.word_counter.matcher;
 
 import ru.slevyns.testtask.domain.Word;
 

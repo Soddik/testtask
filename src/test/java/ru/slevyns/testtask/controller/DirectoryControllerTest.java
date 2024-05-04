@@ -9,7 +9,7 @@ import org.springframework.ui.ConcurrentModel;
 import ru.slevyns.testtask.domain.DirRequest;
 import ru.slevyns.testtask.domain.ValidationResult;
 import ru.slevyns.testtask.domain.Word;
-import ru.slevyns.testtask.service.counter.WordCountService;
+import ru.slevyns.testtask.service.word_counter.WordCountService;
 import ru.slevyns.testtask.service.validation.ValidationService;
 
 import java.util.HashSet;

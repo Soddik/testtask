@@ -1,8 +1,8 @@
-package ru.slevyns.testtask.service.matcher.impl;
+package ru.slevyns.testtask.service.word_counter.matcher.impl;
 
 import org.springframework.stereotype.Service;
 import ru.slevyns.testtask.domain.Word;
-import ru.slevyns.testtask.service.matcher.TextRegexMatcherService;
+import ru.slevyns.testtask.service.word_counter.matcher.TextRegexMatcherService;
 
 import java.util.HashMap;
 import java.util.Set;

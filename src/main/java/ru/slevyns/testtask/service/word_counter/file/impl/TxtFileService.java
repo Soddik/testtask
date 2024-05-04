@@ -1,13 +1,13 @@
-package ru.slevyns.testtask.service.file.impl;
+package ru.slevyns.testtask.service.word_counter.file.impl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import ru.slevyns.testtask.domain.AllowedExtension;
 import ru.slevyns.testtask.domain.Word;
-import ru.slevyns.testtask.service.file.BaseFileService;
+import ru.slevyns.testtask.service.word_counter.file.BaseFileService;
 import ru.slevyns.testtask.service.executor.CustomExecutorService;
-import ru.slevyns.testtask.service.matcher.TextRegexMatcherService;
+import ru.slevyns.testtask.service.word_counter.matcher.TextRegexMatcherService;
 
 import java.io.File;
 import java.nio.file.Files;

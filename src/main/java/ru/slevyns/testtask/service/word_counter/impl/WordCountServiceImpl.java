@@ -1,4 +1,4 @@
-package ru.slevyns.testtask.service.counter.impl;
+package ru.slevyns.testtask.service.word_counter.impl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -6,13 +6,13 @@ import org.springframework.stereotype.Service;
 import ru.slevyns.testtask.domain.DirRequest;
 import ru.slevyns.testtask.domain.Word;
 import ru.slevyns.testtask.mapper.DirMapper;
-import ru.slevyns.testtask.service.file.FileService;
-import ru.slevyns.testtask.service.counter.WordCountService;
-import ru.slevyns.testtask.service.filter.FilterService;
+import ru.slevyns.testtask.service.word_counter.file.FileService;
+import ru.slevyns.testtask.service.word_counter.WordCountService;
+import ru.slevyns.testtask.service.word_counter.filter.FilterService;
 
 import java.util.Set;
 
-import static ru.slevyns.testtask.service.filter.FilterService.*;
+import static ru.slevyns.testtask.service.word_counter.filter.FilterService.*;
 
 @Service
 public class WordCountServiceImpl implements WordCountService {

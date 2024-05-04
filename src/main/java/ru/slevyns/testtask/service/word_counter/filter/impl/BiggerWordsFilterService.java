@@ -1,8 +1,8 @@
-package ru.slevyns.testtask.service.filter.impl;
+package ru.slevyns.testtask.service.word_counter.filter.impl;
 
 import org.springframework.stereotype.Service;
 import ru.slevyns.testtask.domain.Word;
-import ru.slevyns.testtask.service.filter.FilterService;
+import ru.slevyns.testtask.service.word_counter.filter.FilterService;
 
 import java.util.Comparator;
 import java.util.Set;

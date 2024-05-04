@@ -8,8 +8,9 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import ru.slevyns.testtask.domain.DirRequest;
 import ru.slevyns.testtask.domain.Word;
 import ru.slevyns.testtask.mapper.DirMapper;
-import ru.slevyns.testtask.service.file.FileService;
-import ru.slevyns.testtask.service.filter.FilterService;
+import ru.slevyns.testtask.service.word_counter.file.FileService;
+import ru.slevyns.testtask.service.word_counter.filter.FilterService;
+import ru.slevyns.testtask.service.word_counter.impl.WordCountServiceImpl;
 
 import java.nio.file.Path;
 import java.util.Set;
