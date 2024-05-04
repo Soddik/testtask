@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  postgres:
+    image: 'postgres:latest'
+    container_name: 'postgres'
+    environment:
+      - 'POSTGRES_USER=postgres'
+      - 'POSTGRES_PASSWORD=root'
+      - 'POSTGRES_DB=test_db'
+    ports:
+      - "5432:5432"
+  app:
+    build: ./
+    image: slevyns/testtask
+    container_name: 'test_task'
+    ports:
+      - '8081:8081'
+    depends_on:
+      - postgres
