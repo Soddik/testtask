@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import ru.slevyns.testtask.dto.dir.DirRequest;
 import ru.slevyns.testtask.service.word_counter.WordCountService;
-import ru.slevyns.testtask.service.validation.ValidationService;
 
 @Controller
 @RequestMapping("directory/find")
