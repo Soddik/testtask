@@ -1,7 +1,7 @@
 package ru.slevyns.testtask.service.word_counter.file;
 
 
-import ru.slevyns.testtask.domain.Word;
+import ru.slevyns.testtask.dto.dir.Word;
 
 import java.nio.file.Path;
 import java.util.Set;

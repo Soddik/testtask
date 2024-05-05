@@ -3,10 +3,10 @@ package ru.slevyns.testtask.service.word_counter.file.impl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import ru.slevyns.testtask.domain.AllowedExtension;
-import ru.slevyns.testtask.domain.Word;
+import ru.slevyns.testtask.dto.dir.AllowedExtension;
+import ru.slevyns.testtask.dto.dir.Word;
 import ru.slevyns.testtask.service.word_counter.file.BaseFileService;
-import ru.slevyns.testtask.service.executor.CustomExecutorService;
+import ru.slevyns.testtask.service.word_counter.executor.CustomExecutorService;
 import ru.slevyns.testtask.service.word_counter.matcher.TextRegexMatcherService;
 
 import java.io.File;
@@ -18,7 +18,7 @@ import java.util.Set;
 import java.util.concurrent.Future;
 import java.util.stream.Collectors;
 
-import static ru.slevyns.testtask.domain.AllowedExtension.*;
+import static ru.slevyns.testtask.dto.dir.AllowedExtension.*;
 
 @Service
 public class TxtFileService extends BaseFileService {

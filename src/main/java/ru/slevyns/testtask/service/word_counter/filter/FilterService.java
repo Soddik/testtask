@@ -1,6 +1,6 @@
 package ru.slevyns.testtask.service.word_counter.filter;
 
-import ru.slevyns.testtask.domain.Word;
+import ru.slevyns.testtask.dto.dir.Word;
 
 import java.util.Set;
 

@@ -5,14 +5,19 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import ru.slevyns.testtask.domain.DirRequest;
-import ru.slevyns.testtask.domain.Word;
+import org.springframework.beans.factory.annotation.Autowired;
+import ru.slevyns.testtask.dto.dir.DirRequest;
+import ru.slevyns.testtask.dto.dir.DirResponse;
+import ru.slevyns.testtask.dto.dir.ValidationResult;
+import ru.slevyns.testtask.dto.dir.Word;
 import ru.slevyns.testtask.mapper.DirMapper;
+import ru.slevyns.testtask.service.validation.ValidationService;
 import ru.slevyns.testtask.service.word_counter.file.FileService;
 import ru.slevyns.testtask.service.word_counter.filter.FilterService;
 import ru.slevyns.testtask.service.word_counter.impl.WordCountServiceImpl;
 
 import java.nio.file.Path;
+import java.util.HashSet;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -31,6 +36,8 @@ class WordCountServiceImplTest {
     private FilterService filterService;
     @Mock
     private DirMapper mapper;
+    @Mock
+    private ValidationService<DirRequest> validationService;
 
     @InjectMocks
     private WordCountServiceImpl wordCountService;
@@ -38,6 +45,11 @@ class WordCountServiceImplTest {
     @Test
     void countWords_defaultMinWordLengthDefaultTopN_returnFilteredResult() {
         var request = new DirRequest(COUNTER_TEST_DIR_PATH, MIN_LENGTH, TOP_NUM);
+
+        var validationResult = new HashSet<ValidationResult>();
+        doReturn(validationResult)
+                .when(validationService)
+                .validate(request);
 
         var path = Path.of(request.dirPath());
         doReturn(path)
@@ -53,10 +65,16 @@ class WordCountServiceImplTest {
                 .when(filterService)
                 .filter(allWordsSet);
 
+        var mappedResponse = new DirResponse(allWordsSet, new HashSet<>());
+        doReturn(mappedResponse)
+                .when(mapper)
+                .toResponse(allWordsSet, new HashSet<>());
+
         var result = wordCountService.countWords(request);
-        assertEquals(9, result.size());
+        assertEquals(9, result.words().size());
 
         verify(mapper).toDirectoryPath(request);
+        verify(mapper).toResponse(allWordsSet, new HashSet<>());
         verify(fileService).processFiles(path);
         verify(filterService).filter(allWordsSet);
     }
@@ -80,10 +98,16 @@ class WordCountServiceImplTest {
                 .when(filterService)
                 .filter(allWordsSet);
 
+        var mappedResponse = new DirResponse(filtered, new HashSet<>());
+        doReturn(mappedResponse)
+                .when(mapper)
+                .toResponse(filtered, new HashSet<>());
+
         var result = wordCountService.countWords(request);
-        assertEquals(3, result.size());
+        assertEquals(3, result.words().size());
 
         verify(mapper).toDirectoryPath(request);
+        verify(mapper).toResponse(filtered, new HashSet<>());
         verify(fileService).processFiles(path);
         verify(fileService).changeMinWordLength(CHANGED_MIN_TOP);
         verify(filterService).changeTopWordsNum(CHANGED_MIN_TOP);

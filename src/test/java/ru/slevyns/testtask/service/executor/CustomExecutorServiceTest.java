@@ -1,6 +1,7 @@
 package ru.slevyns.testtask.service.executor;
 
 import org.junit.jupiter.api.Test;
+import ru.slevyns.testtask.service.word_counter.executor.CustomExecutorService;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;

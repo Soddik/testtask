@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import ru.slevyns.testtask.domain.DirRequest;
+import ru.slevyns.testtask.dto.dir.DirRequest;
 import ru.slevyns.testtask.service.word_counter.WordCountService;
 import ru.slevyns.testtask.service.validation.ValidationService;
 
@@ -17,11 +17,9 @@ import ru.slevyns.testtask.service.validation.ValidationService;
 public class DirectoryController {
     private static final Logger log = LoggerFactory.getLogger(DirectoryController.class);
     private final WordCountService wordCountService;
-    private final ValidationService<DirRequest> validationService;
 
-    public DirectoryController(WordCountService wordCountService, ValidationService<DirRequest> validationService) {
+    public DirectoryController(WordCountService wordCountService) {
         this.wordCountService = wordCountService;
-        this.validationService = validationService;
     }
 
     @GetMapping("words")
@@ -33,15 +31,15 @@ public class DirectoryController {
     public String findWords(Model model, @ModelAttribute("request") DirRequest request) {
         model.addAttribute("dirRequest", request);
 
-        var errors = validationService.validate(request);
+        log.info("Retrieving words from {}", request.dirPath());
+        var response = wordCountService.countWords(request);
+        var errors = response.errors();
         if (!errors.isEmpty()) {
             model.addAttribute("errors", errors);
             return "/directory/find/validation_error";
         }
 
-        log.info("Retrieving words from {}", request.dirPath());
-        var words = wordCountService.countWords(request);
-        model.addAttribute("result", words);
+        model.addAttribute("result", response);
         log.info("Redirecting to {}", "directory/find/result");
         return "/directory/find/result";
     }

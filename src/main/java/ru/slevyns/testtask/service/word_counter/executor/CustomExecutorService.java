@@ -1,4 +1,4 @@
-package ru.slevyns.testtask.service.executor;
+package ru.slevyns.testtask.service.word_counter.executor;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

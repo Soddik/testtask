@@ -1,4 +1,4 @@
-package ru.slevyns.testtask.domain;
+package ru.slevyns.testtask.dto.dir;
 
 import java.util.Objects;
 

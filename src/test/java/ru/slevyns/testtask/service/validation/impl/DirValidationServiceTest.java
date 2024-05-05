@@ -1,8 +1,8 @@
 package ru.slevyns.testtask.service.validation.impl;
 
 import org.junit.jupiter.api.Test;
-import ru.slevyns.testtask.domain.DirRequest;
-import ru.slevyns.testtask.domain.ValidationResult;
+import ru.slevyns.testtask.dto.dir.DirRequest;
+import ru.slevyns.testtask.dto.dir.ValidationResult;
 import ru.slevyns.testtask.service.validation.ValidationService;
 
 import java.util.Set;

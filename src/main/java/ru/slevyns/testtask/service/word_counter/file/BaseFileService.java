@@ -2,7 +2,7 @@ package ru.slevyns.testtask.service.word_counter.file;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ru.slevyns.testtask.domain.Word;
+import ru.slevyns.testtask.dto.dir.Word;
 
 import java.io.File;
 import java.nio.file.Files;
