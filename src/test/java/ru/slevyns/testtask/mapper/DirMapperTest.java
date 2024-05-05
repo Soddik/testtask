@@ -15,7 +15,7 @@ import static ru.slevyns.testtask.meta.TestMeta.MIN_LENGTH;
 import static ru.slevyns.testtask.meta.TestMeta.TOP_NUM;
 
 class DirMapperTest {
-    private DirMapper mapper = new DirMapper();
+    private final DirMapper mapper = new DirMapper();
 
     @Test
     void toDirectoryPath() {

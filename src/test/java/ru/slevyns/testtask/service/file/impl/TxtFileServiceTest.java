@@ -1,7 +1,6 @@
 package ru.slevyns.testtask.service.file.impl;
 
 import org.junit.jupiter.api.Test;
-import ru.slevyns.testtask.mapper.DirMapper;
 import ru.slevyns.testtask.service.word_counter.file.impl.TxtFileService;
 import ru.slevyns.testtask.service.word_counter.executor.CustomExecutorService;
 import ru.slevyns.testtask.service.word_counter.file.FileService;
