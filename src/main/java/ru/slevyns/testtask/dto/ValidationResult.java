@@ -1,4 +1,4 @@
-package ru.slevyns.testtask.dto.dir;
+package ru.slevyns.testtask.dto;
 
 public record ValidationResult(String errorMessage, String paramName) {
     @Override

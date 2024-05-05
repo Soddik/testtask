@@ -1,6 +1,6 @@
 package ru.slevyns.testtask.service.validation;
 
-import ru.slevyns.testtask.dto.dir.ValidationResult;
+import ru.slevyns.testtask.dto.ValidationResult;
 
 import java.util.Set;
 

@@ -8,7 +8,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.ui.ConcurrentModel;
 import ru.slevyns.testtask.dto.dir.DirRequest;
 import ru.slevyns.testtask.dto.dir.DirResponse;
-import ru.slevyns.testtask.dto.dir.ValidationResult;
+import ru.slevyns.testtask.dto.ValidationResult;
 import ru.slevyns.testtask.dto.dir.Word;
 import ru.slevyns.testtask.service.word_counter.WordCountService;
 

@@ -3,7 +3,7 @@ package ru.slevyns.testtask.mapper;
 import org.springframework.stereotype.Service;
 import ru.slevyns.testtask.dto.dir.DirRequest;
 import ru.slevyns.testtask.dto.dir.DirResponse;
-import ru.slevyns.testtask.dto.dir.ValidationResult;
+import ru.slevyns.testtask.dto.ValidationResult;
 import ru.slevyns.testtask.dto.dir.Word;
 
 import java.nio.file.Path;

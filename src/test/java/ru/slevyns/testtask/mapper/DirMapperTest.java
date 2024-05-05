@@ -3,7 +3,7 @@ package ru.slevyns.testtask.mapper;
 import org.junit.jupiter.api.Test;
 import ru.slevyns.testtask.dto.dir.DirRequest;
 import ru.slevyns.testtask.dto.dir.DirResponse;
-import ru.slevyns.testtask.dto.dir.ValidationResult;
+import ru.slevyns.testtask.dto.ValidationResult;
 import ru.slevyns.testtask.dto.dir.Word;
 
 import java.nio.file.Path;
