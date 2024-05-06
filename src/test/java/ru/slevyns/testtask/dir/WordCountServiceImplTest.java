@@ -1,5 +1,6 @@
-package ru.slevyns.testtask.service.counter.impl;
+package ru.slevyns.testtask.dir;
 
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -22,11 +23,12 @@ import java.util.Set;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.verify;
-import static ru.slevyns.testtask.meta.TestMeta.CHANGED_MIN_TOP;
-import static ru.slevyns.testtask.meta.TestMeta.COUNTER_TEST_DIR_PATH;
-import static ru.slevyns.testtask.meta.TestMeta.MIN_LENGTH;
-import static ru.slevyns.testtask.meta.TestMeta.TOP_NUM;
+import static ru.slevyns.testtask.dir.DirTestMeta.CHANGED_MIN_TOP;
+import static ru.slevyns.testtask.dir.DirTestMeta.COUNTER_TEST_DIR_PATH;
+import static ru.slevyns.testtask.dir.DirTestMeta.MIN_LENGTH;
+import static ru.slevyns.testtask.dir.DirTestMeta.TOP_NUM;
 
+@Order(8)
 @ExtendWith(MockitoExtension.class)
 class WordCountServiceImplTest {
     @Mock

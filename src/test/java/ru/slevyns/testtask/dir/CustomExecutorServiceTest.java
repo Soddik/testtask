@@ -1,4 +1,4 @@
-package ru.slevyns.testtask.service.executor;
+package ru.slevyns.testtask.dir;
 
 import org.junit.jupiter.api.Test;
 import ru.slevyns.testtask.service.word_counter.executor.CustomExecutorService;

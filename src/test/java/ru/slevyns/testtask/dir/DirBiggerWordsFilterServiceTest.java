@@ -1,5 +1,6 @@
-package ru.slevyns.testtask.service.filter.impl;
+package ru.slevyns.testtask.dir;
 
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import ru.slevyns.testtask.dto.dir.Word;
 import ru.slevyns.testtask.service.word_counter.filter.FilterService;
@@ -8,8 +9,8 @@ import ru.slevyns.testtask.service.word_counter.filter.impl.BiggerWordsFilterSer
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
-
-class BiggerWordsFilterServiceTest {
+@Order(1)
+class DirBiggerWordsFilterServiceTest {
     private final FilterService filterService = new BiggerWordsFilterService();
 
     @Test

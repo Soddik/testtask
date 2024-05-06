@@ -1,6 +1,6 @@
-package ru.slevyns.testtask.meta;
+package ru.slevyns.testtask.dir;
 
-public interface TestMeta {
+public interface DirTestMeta {
     //controller data
     String CONTROLLER_TEST_DIR_PATH = "src/test/resources/words/controller/";
     String SUCCESS_REDIRECT = "/directory/find/result";

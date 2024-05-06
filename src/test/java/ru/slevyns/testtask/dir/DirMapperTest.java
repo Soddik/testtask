@@ -1,19 +1,21 @@
-package ru.slevyns.testtask.mapper;
+package ru.slevyns.testtask.dir;
 
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import ru.slevyns.testtask.dto.dir.DirRequest;
 import ru.slevyns.testtask.dto.dir.DirResponse;
 import ru.slevyns.testtask.dto.ValidationResult;
 import ru.slevyns.testtask.dto.dir.Word;
+import ru.slevyns.testtask.mapper.DirMapper;
 
 import java.nio.file.Path;
 import java.util.HashSet;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static ru.slevyns.testtask.meta.TestMeta.CONTROLLER_TEST_DIR_PATH;
-import static ru.slevyns.testtask.meta.TestMeta.MIN_LENGTH;
-import static ru.slevyns.testtask.meta.TestMeta.TOP_NUM;
-
+import static ru.slevyns.testtask.dir.DirTestMeta.CONTROLLER_TEST_DIR_PATH;
+import static ru.slevyns.testtask.dir.DirTestMeta.MIN_LENGTH;
+import static ru.slevyns.testtask.dir.DirTestMeta.TOP_NUM;
+@Order(4)
 class DirMapperTest {
     private final DirMapper mapper = new DirMapper();
 

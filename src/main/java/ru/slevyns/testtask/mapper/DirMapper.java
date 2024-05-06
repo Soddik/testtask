@@ -8,7 +8,9 @@ import ru.slevyns.testtask.dto.dir.Word;
 
 import java.nio.file.Path;
 import java.util.Set;
-
+/**
+ * Mapper for directory operations task
+ */
 @Service
 public class DirMapper {
     public Path toDirectoryPath(DirRequest request) {

@@ -30,7 +30,6 @@ public class DirectoryController {
     public String findWords(Model model, @ModelAttribute("request") DirRequest request) {
         model.addAttribute("dirRequest", request);
 
-        log.info("Retrieving words from {}", request.dirPath());
         var response = wordCountService.countWords(request);
         var errors = response.errors();
         if (!errors.isEmpty()) {
@@ -39,7 +38,6 @@ public class DirectoryController {
         }
 
         model.addAttribute("result", response);
-        log.info("Redirecting to {}", "directory/find/result");
         return "/directory/find/result";
     }
 }

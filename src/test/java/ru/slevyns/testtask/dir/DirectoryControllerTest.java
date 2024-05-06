@@ -1,11 +1,13 @@
-package ru.slevyns.testtask.controller;
+package ru.slevyns.testtask.dir;
 
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.ui.ConcurrentModel;
+import ru.slevyns.testtask.controller.DirectoryController;
 import ru.slevyns.testtask.dto.dir.DirRequest;
 import ru.slevyns.testtask.dto.dir.DirResponse;
 import ru.slevyns.testtask.dto.ValidationResult;
@@ -19,21 +21,21 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
-import static ru.slevyns.testtask.meta.TestMeta.CONTROLLER_TEST_DIR_PATH;
-import static ru.slevyns.testtask.meta.TestMeta.ERROR_REDIRECT;
-import static ru.slevyns.testtask.meta.TestMeta.FIND_WORDS_PAGE;
-import static ru.slevyns.testtask.meta.TestMeta.MIN_LENGTH;
-import static ru.slevyns.testtask.meta.TestMeta.SUCCESS_REDIRECT;
-import static ru.slevyns.testtask.meta.TestMeta.TOP_NUM;
-import static ru.slevyns.testtask.meta.TestMeta.WORD_1;
-import static ru.slevyns.testtask.meta.TestMeta.WORD_2;
+import static ru.slevyns.testtask.dir.DirTestMeta.CONTROLLER_TEST_DIR_PATH;
+import static ru.slevyns.testtask.dir.DirTestMeta.ERROR_REDIRECT;
+import static ru.slevyns.testtask.dir.DirTestMeta.FIND_WORDS_PAGE;
+import static ru.slevyns.testtask.dir.DirTestMeta.MIN_LENGTH;
+import static ru.slevyns.testtask.dir.DirTestMeta.SUCCESS_REDIRECT;
+import static ru.slevyns.testtask.dir.DirTestMeta.TOP_NUM;
+import static ru.slevyns.testtask.dir.DirTestMeta.WORD_1;
+import static ru.slevyns.testtask.dir.DirTestMeta.WORD_2;
 import static ru.slevyns.testtask.util.DirValidationMeta.DIR_PATH_ERROR;
 import static ru.slevyns.testtask.util.DirValidationMeta.DIR_PATH_PARAM;
 import static ru.slevyns.testtask.util.DirValidationMeta.MIN_WORD_LENGTH_ERROR;
 import static ru.slevyns.testtask.util.DirValidationMeta.MIN_WORD_PARAM;
 import static ru.slevyns.testtask.util.DirValidationMeta.TOP_N_ERROR;
 import static ru.slevyns.testtask.util.DirValidationMeta.TOP_N_PARAM;
-
+@Order(3)
 @ExtendWith(MockitoExtension.class)
 class DirectoryControllerTest {
     @Mock

@@ -1,5 +1,6 @@
-package ru.slevyns.testtask.service.file.impl;
+package ru.slevyns.testtask.dir;
 
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import ru.slevyns.testtask.service.word_counter.file.impl.TxtFileService;
 import ru.slevyns.testtask.service.word_counter.executor.CustomExecutorService;
@@ -10,9 +11,10 @@ import ru.slevyns.testtask.service.word_counter.matcher.impl.TextRegexMatcherImp
 import java.io.File;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static ru.slevyns.testtask.meta.TestMeta.*;
+import static ru.slevyns.testtask.dir.DirTestMeta.*;
 
-class TxtFileServiceTest {
+@Order(7)
+class DirTxtFileServiceTest {
     private final TextRegexMatcherService regexMatcherService = new TextRegexMatcherImpl();
     private final CustomExecutorService executorService = new CustomExecutorService();
 
