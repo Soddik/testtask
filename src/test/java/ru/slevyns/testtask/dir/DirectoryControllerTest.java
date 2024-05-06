@@ -31,10 +31,10 @@ import static ru.slevyns.testtask.dir.DirTestMeta.WORD_1;
 import static ru.slevyns.testtask.dir.DirTestMeta.WORD_2;
 import static ru.slevyns.testtask.util.DirValidationMeta.DIR_PATH_ERROR;
 import static ru.slevyns.testtask.util.DirValidationMeta.DIR_PATH_PARAM;
-import static ru.slevyns.testtask.util.DirValidationMeta.MIN_WORD_LENGTH_ERROR;
 import static ru.slevyns.testtask.util.DirValidationMeta.MIN_WORD_PARAM;
-import static ru.slevyns.testtask.util.DirValidationMeta.TOP_N_ERROR;
+import static ru.slevyns.testtask.util.DirValidationMeta.MUST_BE_GREATER_THAN_ERROR;
 import static ru.slevyns.testtask.util.DirValidationMeta.TOP_N_PARAM;
+
 @Order(3)
 @ExtendWith(MockitoExtension.class)
 class DirectoryControllerTest {
@@ -75,11 +75,7 @@ class DirectoryControllerTest {
         var model = new ConcurrentModel();
         var request = new DirRequest("", -1, -1);
 
-        var errors = new HashSet<>(Set.of(
-                new ValidationResult(DIR_PATH_ERROR, DIR_PATH_PARAM),
-                new ValidationResult(MIN_WORD_LENGTH_ERROR, MIN_WORD_PARAM),
-                new ValidationResult(TOP_N_ERROR, TOP_N_PARAM))
-        );
+        var errors = fillErrors();
 
         var response = new DirResponse(null, errors);
 
@@ -92,5 +88,17 @@ class DirectoryControllerTest {
 
         verify(wordCountService).countWords(request);
         verifyNoMoreInteractions(wordCountService);
+    }
+
+    private Set<ValidationResult> fillErrors() {
+        return Set.of(
+                new ValidationResult(DIR_PATH_ERROR, DIR_PATH_PARAM),
+                new ValidationResult(
+                        MUST_BE_GREATER_THAN_ERROR.formatted(MIN_WORD_PARAM),
+                        MIN_WORD_PARAM),
+                new ValidationResult(
+                        MUST_BE_GREATER_THAN_ERROR.formatted(TOP_N_PARAM),
+                        TOP_N_PARAM)
+        );
     }
 }

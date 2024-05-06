@@ -31,13 +31,19 @@ public class DirValidationService implements ValidationService<DirRequest> {
 
     private void validateMinWordLength(Set<ValidationResult> result, int minWordLength) {
         if (minWordLength <= 0) {
-            result.add(new ValidationResult(MIN_WORD_LENGTH_ERROR, MIN_WORD_PARAM));
+            result.add(new ValidationResult(
+                    MUST_BE_GREATER_THAN_ERROR.formatted(MIN_WORD_PARAM),
+                    MIN_WORD_PARAM)
+            );
         }
     }
 
     private void validateTopN(Set<ValidationResult> result, int topN) {
         if (topN <= 0) {
-            result.add(new ValidationResult(TOP_N_ERROR, TOP_N_PARAM));
+            result.add(new ValidationResult(
+                    MUST_BE_GREATER_THAN_ERROR.formatted(TOP_N_PARAM),
+                    TOP_N_PARAM)
+            );
         }
     }
 }
