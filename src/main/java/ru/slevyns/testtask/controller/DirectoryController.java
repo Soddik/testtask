@@ -14,7 +14,6 @@ import ru.slevyns.testtask.service.word_counter.WordCountService;
 @Controller
 @RequestMapping("directory/find")
 public class DirectoryController {
-    private static final Logger log = LoggerFactory.getLogger(DirectoryController.class);
     private final WordCountService wordCountService;
 
     public DirectoryController(WordCountService wordCountService) {
