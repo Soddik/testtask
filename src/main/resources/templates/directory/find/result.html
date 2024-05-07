@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Words found</h1>
-<tr data-th-each="word :${result}">
+<tr data-th-each="word :${result.words()}">
     <td data-th-text="${word.word}"/>
     <td data-th-text="${word.count}"/>
 </tr>

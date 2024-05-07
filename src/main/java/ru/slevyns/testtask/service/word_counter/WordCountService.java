@@ -5,7 +5,7 @@ import ru.slevyns.testtask.dto.dir.DirResponse;
 
 public interface WordCountService {
     /**
-     * Count words.
+     * Handle request and count words
      *
      * @param request params for directory
      * @return a Set of filtered words from files

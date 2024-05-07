@@ -15,6 +15,6 @@ services:
     image: slevyns/testtask
     container_name: 'test_task'
     ports:
-      - '8081:8081'
+      - '8085:8085'
     depends_on:
       - postgres

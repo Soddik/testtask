@@ -67,12 +67,10 @@ public class TxtFileService extends BaseFileService {
     protected Set<Word> processFile(File file) {
         try (var reader = Files.newBufferedReader(Paths.get(file.getPath()))) {
             log.info("Processing file {}", file);
-            var words = reader.lines()
+            return reader.lines()
                     .map(textRegexMatcherService::findMatches)
                     .flatMap(Collection::stream)
                     .collect(Collectors.toUnmodifiableSet());
-            log.info("Words found: {}", words);
-            return words;
         } catch (Exception e) {
             log.error("Error while processing file {}", file.getPath(), e);
             throw new RuntimeException(e);
