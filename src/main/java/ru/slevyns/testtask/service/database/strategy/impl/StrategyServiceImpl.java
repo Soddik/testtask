@@ -3,6 +3,7 @@ package ru.slevyns.testtask.service.database.strategy.impl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import ru.slevyns.testtask.aspect.annotation.ExecutionTime;
 import ru.slevyns.testtask.dto.db.DbRequest;
 import ru.slevyns.testtask.service.database.DbService;
 import ru.slevyns.testtask.service.database.strategy.DeleteStrategy;
@@ -25,6 +26,7 @@ public class StrategyServiceImpl implements StrategyService {
         this.dbService = dbService;
     }
 
+    @ExecutionTime
     @Override
     public long execute(DbRequest request) {
         var tableName = request.tableName();

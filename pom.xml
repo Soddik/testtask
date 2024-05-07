@@ -21,6 +21,7 @@
         <junit.suite.versiom>1.10.2</junit.suite.versiom>
         <springdoc-openapi-ui.version>2.5.0</springdoc-openapi-ui.version>
         <swagger.version>2.2.7</swagger.version>
+        <spring.aop.version>3.2.5</spring.aop.version>
     </properties>
     <dependencies>
         <dependency>
@@ -72,6 +73,12 @@
             <artifactId>swagger-models</artifactId>
             <version>${swagger.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+            <version>${spring.aop.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>

@@ -3,6 +3,7 @@ package ru.slevyns.testtask.service.word_counter.impl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import ru.slevyns.testtask.aspect.annotation.ExecutionTime;
 import ru.slevyns.testtask.dto.dir.DirRequest;
 import ru.slevyns.testtask.dto.dir.DirResponse;
 import ru.slevyns.testtask.mapper.DirMapper;
@@ -30,6 +31,7 @@ public class WordCountServiceImpl implements WordCountService {
         this.mapper = mapper;
     }
 
+    @ExecutionTime
     @Override
     public DirResponse countWords(DirRequest request) {
         var validationResults = validationService.validate(request);
