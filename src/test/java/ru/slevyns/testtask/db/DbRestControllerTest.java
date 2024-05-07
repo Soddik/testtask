@@ -34,13 +34,7 @@ import static org.springframework.http.MediaType.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.testcontainers.utility.DockerImageName.parse;
-import static ru.slevyns.testtask.db.DbTestMeta.DB_NAME;
-import static ru.slevyns.testtask.db.DbTestMeta.DB_PASSWORD;
-import static ru.slevyns.testtask.db.DbTestMeta.DB_USER;
-import static ru.slevyns.testtask.db.DbTestMeta.DELETE_API;
-import static ru.slevyns.testtask.db.DbTestMeta.POPULATE_API;
-import static ru.slevyns.testtask.db.DbTestMeta.POSTGRES_IMAGE;
-import static ru.slevyns.testtask.db.DbTestMeta.TEST_DATE_TIME;
+import static ru.slevyns.testtask.db.DbTestMeta.*;
 import static ru.slevyns.testtask.util.DbPopulationService.TEST_TABLE_NAME;
 import static ru.slevyns.testtask.util.QueryMeta.*;
 
@@ -50,8 +44,6 @@ import static ru.slevyns.testtask.util.QueryMeta.*;
 @SpringBootTest
 class DbRestControllerTest {
     private final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-
-    protected final static int TABLE_SIZE = 10_000_000;
     @Autowired
     protected WebApplicationContext context;
     protected MockMvc mockMvc;
@@ -72,30 +64,6 @@ class DbRestControllerTest {
         registry.add("spring.datasource.url", SQL_CONTAINER::getJdbcUrl);
         registry.add("spring.datasource.username", SQL_CONTAINER::getUsername);
         registry.add("spring.datasource.password", SQL_CONTAINER::getPassword);
-    }
-
-    protected void populateDbForBatchAndTempStrategy() {
-        populationService.createTable(TEST_TABLE_NAME);
-        var now = LocalDateTime.now();
-        populationService.generateRows(TEST_TABLE_NAME, TABLE_SIZE, now::plusSeconds);
-    }
-
-    protected void populateDbForTruncStrategy() {
-        populationService.createTable(TEST_TABLE_NAME);
-        var now = LocalDateTime.now();
-        populationService.generateRows(TEST_TABLE_NAME, TABLE_SIZE, (i) -> now);
-    }
-
-    protected static String asJsonString(Object obj) {
-        try {
-            return getObjectMapper().writeValueAsString(obj);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    protected static ObjectMapper getObjectMapper() {
-        return new ObjectMapper().registerModule(new JavaTimeModule());
     }
 
     @BeforeEach
@@ -192,6 +160,18 @@ class DbRestControllerTest {
         assertEquals(2, errors.size());
     }
 
+    @Test
+    public void populateDb() throws Exception {
+        var request = new DpPopulateRequest(TEST_TABLE_NAME);
+        mockMvc.perform(post(POPULATE_API)
+                        .content(asJsonString(request))
+                        .contentType(APPLICATION_JSON))
+                .andExpect(status().isOk());
+
+        var totalRows = dbService.queryForObject(SELECT_COUNT_ROWS_BY_TABLE_NAME.formatted(TEST_TABLE_NAME), Integer.class);
+        assertEquals(10_000_000, totalRows);
+    }
+
     private DbResponse performOkPost(DbRequest request) throws Exception {
         var mvcResult = mockMvc.perform(post(DELETE_API)
                         .content(asJsonString(request))
@@ -206,15 +186,27 @@ class DbRestControllerTest {
         );
     }
 
-    @Test
-    public void populateDb() throws Exception {
-        var request = new DpPopulateRequest(TEST_TABLE_NAME);
-        mockMvc.perform(post(POPULATE_API)
-                        .content(asJsonString(request))
-                        .contentType(APPLICATION_JSON))
-                .andExpect(status().isOk());
+    private void populateDbForBatchAndTempStrategy() {
+        populationService.createTable(TEST_TABLE_NAME);
+        var now = LocalDateTime.now();
+        populationService.generateRows(TEST_TABLE_NAME, TABLE_SIZE, now::plusSeconds);
+    }
 
-        var totalRows = dbService.queryForObject(SELECT_COUNT_ROWS_BY_TABLE_NAME.formatted(TEST_TABLE_NAME), Integer.class);
-        assertEquals(10_000_000, totalRows);
+    private void populateDbForTruncStrategy() {
+        populationService.createTable(TEST_TABLE_NAME);
+        var now = LocalDateTime.now();
+        populationService.generateRows(TEST_TABLE_NAME, TABLE_SIZE, (i) -> now);
+    }
+
+    private static String asJsonString(Object obj) {
+        try {
+            return getObjectMapper().writeValueAsString(obj);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private static ObjectMapper getObjectMapper() {
+        return new ObjectMapper().registerModule(new JavaTimeModule());
     }
 }

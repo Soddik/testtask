@@ -1,6 +1,5 @@
 package ru.slevyns.testtask.dir;
 
-import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -28,7 +27,6 @@ import static ru.slevyns.testtask.dir.DirTestMeta.COUNTER_TEST_DIR_PATH;
 import static ru.slevyns.testtask.dir.DirTestMeta.MIN_LENGTH;
 import static ru.slevyns.testtask.dir.DirTestMeta.TOP_NUM;
 
-@Order(8)
 @ExtendWith(MockitoExtension.class)
 class WordCountServiceImplTest {
     @Mock

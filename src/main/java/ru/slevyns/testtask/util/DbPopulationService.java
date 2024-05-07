@@ -4,6 +4,7 @@ import org.springframework.jdbc.core.namedparam.SqlParameterSourceUtils;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ru.slevyns.testtask.aspect.annotation.ExecutionTime;
 import ru.slevyns.testtask.dto.db.DpPopulateRequest;
 import ru.slevyns.testtask.service.database.DbService;
 
@@ -39,6 +40,7 @@ public class DbPopulationService {
      *
      * @param table table name
      */
+    @ExecutionTime
     @Transactional
     public void createTable(String table) {
         dbService.execute(CREATE_TABLE_BY_NAME.formatted(table));
@@ -50,6 +52,7 @@ public class DbPopulationService {
      * @param table  table name
      * @param length number of rows
      */
+    @ExecutionTime
     public void generateRows(String table, Integer length, Function<Integer, LocalDateTime> func) {
         var recordsBatch = new ArrayList<Map<String, LocalDateTime>>();
         IntStream.range(0, length)
@@ -92,6 +95,7 @@ public class DbPopulationService {
         simpleJdbcInsert.executeBatch(SqlParameterSourceUtils.createBatch(batch));
     }
 
+    @ExecutionTime
     @Transactional
     public void dropTable(String tableName) {
         dbService.execute(DROP_TABLE_BY_NAME.formatted(tableName));
@@ -102,6 +106,7 @@ public class DbPopulationService {
      *
      * @param request populate db request
      */
+    @ExecutionTime
     @Transactional
     public void populateViaApi(DpPopulateRequest request) {
         var tableName = request.tableName();

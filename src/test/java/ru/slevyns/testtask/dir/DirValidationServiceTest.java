@@ -1,6 +1,5 @@
 package ru.slevyns.testtask.dir;
 
-import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import ru.slevyns.testtask.dto.dir.DirRequest;
 import ru.slevyns.testtask.dto.ValidationResult;
@@ -19,7 +18,6 @@ import static ru.slevyns.testtask.util.DirValidationMeta.MIN_WORD_PARAM;
 import static ru.slevyns.testtask.util.DirValidationMeta.MUST_BE_GREATER_THAN_ERROR;
 import static ru.slevyns.testtask.util.DirValidationMeta.TOP_N_PARAM;
 
-@Order(5)
 class DirValidationServiceTest {
     private final ValidationService<DirRequest> validationService = new DirValidationService();
 

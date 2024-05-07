@@ -1,6 +1,5 @@
 package ru.slevyns.testtask.dir;
 
-import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -35,7 +34,6 @@ import static ru.slevyns.testtask.util.DirValidationMeta.MIN_WORD_PARAM;
 import static ru.slevyns.testtask.util.DirValidationMeta.MUST_BE_GREATER_THAN_ERROR;
 import static ru.slevyns.testtask.util.DirValidationMeta.TOP_N_PARAM;
 
-@Order(3)
 @ExtendWith(MockitoExtension.class)
 class DirectoryControllerTest {
     @Mock

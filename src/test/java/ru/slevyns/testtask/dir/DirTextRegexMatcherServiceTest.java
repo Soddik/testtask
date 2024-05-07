@@ -1,6 +1,5 @@
 package ru.slevyns.testtask.dir;
 
-import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import ru.slevyns.testtask.dto.dir.Word;
 import ru.slevyns.testtask.service.word_counter.matcher.TextRegexMatcherService;
@@ -14,7 +13,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import static ru.slevyns.testtask.dir.DirTestMeta.TEXT_CYR;
 import static ru.slevyns.testtask.dir.DirTestMeta.TEXT_ENG;
 
-@Order(6)
 class DirTextRegexMatcherServiceTest {
 
     private TextRegexMatcherService textRegexMatcher;
