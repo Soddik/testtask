@@ -16,7 +16,7 @@
 
 ## Технологии
 
-Java 17, Spring Boot, PostgreSQL, Swagger, Tescontainers
+Java 17, Spring Boot, PostgreSQL, Docker, Swagger, Tescontainers
 
 ## API
 
