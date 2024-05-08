@@ -2,7 +2,7 @@ server:
   port: 8085
 spring:
   application:
-    name: testtask
+    name: old_remover
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://postgres:5432/test_db?serverTimezone=UTC
