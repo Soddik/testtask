@@ -31,10 +31,10 @@ Swagger - `/swagger-ui/index.html#/`
 
 ### SettingUp Dev
 
-Загрузить ZIP архив [link](https://github.com/Soddik/testtask/archive/refs/heads/master.zip).
+Загрузить ZIP архив [link](https://github.com/Soddik/old_remover/archive/refs/heads/master.zip).
 
 Загрузить проект из репозитория с помощью HTTPS:
-`git clone https://github.com/Soddik/testtask.git`.
+`git clone https://github.com/Soddik/old_remover.git`.
 
 ### Запуск в Docker
 
