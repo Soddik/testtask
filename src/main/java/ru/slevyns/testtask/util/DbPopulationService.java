@@ -5,8 +5,8 @@ import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.slevyns.testtask.aspect.annotation.ExecutionTime;
-import ru.slevyns.testtask.dto.db.DpPopulateRequest;
-import ru.slevyns.testtask.service.database.DbService;
+import ru.slevyns.testtask.dto.DpPopulateRequest;
+import ru.slevyns.testtask.service.DbService;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

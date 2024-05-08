@@ -12,8 +12,8 @@ services:
       - "5432:5432"
   app:
     build: ./
-    image: slevyns/testtask
-    container_name: 'test_task'
+    image: slevyns/old_remover
+    container_name: 'old_remover'
     ports:
       - '8085:8085'
     depends_on:

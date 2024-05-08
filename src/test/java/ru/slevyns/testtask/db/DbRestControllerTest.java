@@ -20,10 +20,10 @@ import org.springframework.web.context.WebApplicationContext;
 import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
-import ru.slevyns.testtask.dto.db.DbRequest;
-import ru.slevyns.testtask.dto.db.DbResponse;
-import ru.slevyns.testtask.dto.db.DpPopulateRequest;
-import ru.slevyns.testtask.service.database.DbService;
+import ru.slevyns.testtask.dto.DbRequest;
+import ru.slevyns.testtask.dto.DbResponse;
+import ru.slevyns.testtask.dto.DpPopulateRequest;
+import ru.slevyns.testtask.service.DbService;
 import ru.slevyns.testtask.util.DbPopulationService;
 
 import java.time.LocalDateTime;

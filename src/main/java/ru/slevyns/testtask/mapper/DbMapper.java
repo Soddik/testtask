@@ -2,8 +2,8 @@ package ru.slevyns.testtask.mapper;
 
 import org.springframework.stereotype.Service;
 import ru.slevyns.testtask.dto.ValidationResult;
-import ru.slevyns.testtask.dto.db.DbRequest;
-import ru.slevyns.testtask.dto.db.DbResponse;
+import ru.slevyns.testtask.dto.DbRequest;
+import ru.slevyns.testtask.dto.DbResponse;
 
 import java.util.Set;
 import java.util.stream.Collectors;

@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ru.slevyns.testtask.dto.db.DbRequest;
-import ru.slevyns.testtask.dto.db.DbResponse;
-import ru.slevyns.testtask.dto.db.DpPopulateRequest;
-import ru.slevyns.testtask.service.database.DeleteService;
+import ru.slevyns.testtask.dto.DbRequest;
+import ru.slevyns.testtask.dto.DbResponse;
+import ru.slevyns.testtask.dto.DpPopulateRequest;
+import ru.slevyns.testtask.service.DeleteService;
 import ru.slevyns.testtask.util.DbPopulationService;
 
 import java.util.Set;

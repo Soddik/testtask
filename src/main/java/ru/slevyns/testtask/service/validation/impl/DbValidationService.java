@@ -2,7 +2,7 @@ package ru.slevyns.testtask.service.validation.impl;
 
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.stereotype.Service;
-import ru.slevyns.testtask.dto.db.DbRequest;
+import ru.slevyns.testtask.dto.DbRequest;
 import ru.slevyns.testtask.dto.ValidationResult;
 import ru.slevyns.testtask.service.validation.ValidationService;
 
